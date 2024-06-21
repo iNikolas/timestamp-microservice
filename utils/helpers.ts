@@ -12,6 +12,14 @@ export function parseDate(input?: string) {
   const unix = date.getTime();
   const utc = date.toUTCString();
 
+  console.log(unix, utc);
+
+  if (Number.isNaN(unix)) {
+    return {
+      error: utc,
+    };
+  }
+
   return {
     unix,
     utc,
